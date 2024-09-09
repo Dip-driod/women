@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Women Safety Website</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="logo">Women Safety</div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="sos.html">SOS</a></li>
+                <li><a href="login.html">Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="dashboard">
+            <h2>Welcome to your Dashboard</h2>
+            <div class="dashboard-options">
+                <button class="connect-device-btn" onclick="connectDevice()">Connect Device</button>
+                <p id="connectStatus"></p>
+            </div>
+        </section>
+
+        <section id="connected-apps">
+            <h2>Connected Devices</h2>
+            <ul>
+                <li>Smartwatch</li>
+                <li>Phone</li>
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <p>Designed by Spirit7Tech</p>
+        <p>© 2024 Women Safety Initiative</p>
+    </footer>
+
+    <script>
+        function connectDevice() {
+            // Simulate a device connection
+            document.getElementById('connectStatus').textContent = "Connecting to device...";
+            setTimeout(() => {
+                document.getElementById('connectStatus').textContent = "Device successfully connected!";
+            }, 2000);
+        }
+    </script>
+</body>
+</html>
