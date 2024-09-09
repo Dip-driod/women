@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Women Safety Website</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="scripts.js" defer></script>
+</head>
+<body>
+    <header>
+        <div class="logo">Women Safety</div>
+        <nav>
+            <ul>
+                <li><a href="sos.html">SOS</a></li>
+                <li><a href="#contact-form">Contact-Us</a></li>
+                <li><a href="#log">Connect Device</a></li>
+                <li><a href="login.html">Login</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home">
+            <div class="main-image-container">
+                <img src="women-safety-in-digital-space.png" alt="Safety Image" class="main-image">
+                <button class="sos-btn" onclick="openSOSPage()">SOS Button</button>
+            </div>
+        </section>
+        
+
+        <section id="contacts">
+            <h2>Emergency Contacts</h2>
+            <div class="contact-list">
+                <div class="contact">
+                    <img src="parents.png" alt="Parent Image" class="contact-img">
+                    <div class="contact-info">
+                        <p>Parents</p>
+                        <p>Phone: 123-456-7890</p>
+                    </div>
+                </div>
+                <div class="contact">
+                    <img src="bf.jpg" alt="Boyfriend Image" class="contact-img">
+                    <div class="contact-info">
+                        <p>Boyfriend</p>
+                        <p>Phone: 987-654-3210</p>
+                    </div>
+                </div>
+                <div class="contact">
+                    <img src="police.avif" alt="Police Image" class="contact-img">
+                    <div class="contact-info">
+                        <p>Police</p>
+                        <p>Phone: 100</p>
+                    </div>
+                </div>
+                <div class="contact">
+                    <img src="d-doctor-male-character-simple-cartoon-fun-person-man-hospital-clinic-medical-specialist-pharmacist-lab-worker-ai-generated-309991068.webp" alt="Hospital Image" class="contact-img">
+                    <div class="contact-info">
+                        <p>Hospital</p>
+                        <p>Phone: 102</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="video">
+            <h2>Safety Videos</h2>
+            <video width="600" autoplay muted>
+                <source src="./Make Your City Safe _ Women Safety Video _ Volvo Auto India.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </section>
+        
+
+        <section id="contact-form">
+            <h2>Contact Us</h2>
+            <form>
+                <input type="text" placeholder="Your Name" required>
+                <input type="email" placeholder="Your Email" required>
+                <input type="text" placeholder="Your Contact Number" required>
+                <textarea placeholder="Your Message" required></textarea>
+                <button type="submit">Submit</button>
+            </form>
+        </section>
+
+        <section id="location">
+            <h2>Live Location Tracking</h2>
+            <p>Your current location:</p>
+            <div id="map"></div>
+        </section>
+    </main>
+
+    <footer id="footer">
+        <p>Designed by Spirit7Tech</p>
+        <p>© 2024 Women Safety Initiative</p>
+        <a href="#home" class="home-button">Back to Home</a>
+    </footer>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+    if (navigator.geolocation) {
+        navigator.geolocation.watchPosition(initMap, handleError, {
+            enableHighAccuracy: true,
+            timeout: 5000,
+            maximumAge: 0
+        });
+    } else {
+        document.getElementById('map').innerHTML = "Geolocation is not supported by this browser.";
+    }
+
+    function initMap(position) {
+        const latitude = position.coords.latitude;
+        const longitude = position.coords.longitude;
+
+        // Create a map centered on the user's location
+        const mapOptions = {
+            zoom: 15,
+            center: { lat: latitude, lng: longitude }
+        };
+        const map = new google.maps.Map(document.getElementById('map'), mapOptions);
+
+        // Add a marker to the map at the user's location
+        const marker = new google.maps.Marker({
+            position: { lat: latitude, lng: longitude },
+            map: map,
+            title: "You are here!"
+        });
+
+        // Update the map center if the position changes
+        navigator.geolocation.watchPosition(function(position) {
+            const newLat = position.coords.latitude;
+            const newLng = position.coords.longitude;
+            map.setCenter(new google.maps.LatLng(newLat, newLng));
+            marker.setPosition(new google.maps.LatLng(newLat, newLng));
+        });
+    }
+
+    function handleError(error) {
+        switch (error.code) {
+            case error.PERMISSION_DENIED:
+                document.getElementById('map').innerHTML = "User denied the request for Geolocation.";
+                break;
+            case error.POSITION_UNAVAILABLE:
+                document.getElementById('map').innerHTML = "Location information is unavailable.";
+                break;
+            case error.TIMEOUT:
+                document.getElementById('map').innerHTML = "The request to get user location timed out.";
+                break;
+            case error.UNKNOWN_ERROR:
+                document.getElementById('map').innerHTML = "An unknown error occurred.";
+                break;
+        }
+    }
+});
+
+    </script>
+</body>
+</html>

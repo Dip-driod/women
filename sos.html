@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SOS - Women Safety</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <script src="scripts.js" defer></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #FDF2E9;
+            color: #333333;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #2C3E50;
+            color: #FFFFFF;
+            padding: 10px;
+            text-align: center;
+        }
+        .content {
+            padding: 20px;
+        }
+        .section {
+            margin-bottom: 20px;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+        }
+        .section.fade-in {
+            opacity: 1;
+        }
+        h1, h2 {
+            color: #FF6F61;
+        }
+        .faq, .safety-info {
+            background-color: #F4F1FA;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .faq-item {
+            margin-bottom: 15px;
+        }
+        .faq-question {
+            cursor: pointer;
+            font-weight: bold;
+        }
+        .faq-answer {
+            display: none;
+            margin-top: 5px;
+        }
+        .faq-item.show-answer .faq-answer {
+            display: block;
+        }
+        .faq-item {
+            position: relative;
+            margin-bottom: 15px;
+        }
+        .see-more {
+            display: none;
+            cursor: pointer;
+            color: #007BFF;
+            text-decoration: underline;
+        }
+       
+.contact-list {
+    display: flex;
+    justify-content: space-around;
+    margin: 20px;
+}
+
+.contact {
+    position: relative;
+    text-align: center;
+}
+
+.contact-img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: transform 0.5s;
+}
+
+.contact-img:hover {
+    transform: scale(1.1);
+}
+
+.contact-info {
+    display: none;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.contact:hover .contact-info {
+    display: block;
+}
+
+        #map {
+            width: 100%;
+            height: 300px;
+            background: #e0e0e0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">Women Safety</div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="sos.html">SOS</a></li>
+                <li><a href="login.html">Live Location</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="content">
+        <section class="section animate__animated animate__fadeIn">
+            <h1>SOS Emergency</h1>
+            <p>If you are in immediate danger, please use the SOS button on the home page to send an emergency alert to your selected contacts. This page provides additional information on how to use the SOS feature effectively.</p>
+        </section>
+
+        <section class="section animate__animated animate__fadeIn animate__delay-1s">
+            <h2>Emergency Contacts</h2>
+            <div class="contact-list">
+                <div class="contact">
+                    <img src="parents.png" alt="Parent Image" class="contact-img">
+                    <div class="contact-info">
+                        <p>Parents</p>
+                        <p>Phone: 123-456-7890</p>
+                    </div>
+                </div>
+                <div class="contact">
+                    <img src="bf.jpg" alt="Boyfriend Image" class="contact-img">
+                    <div class="contact-info">
+                        <p>Boyfriend</p>
+                        <p>Phone: 987-654-3210</p>
+                    </div>
+                </div>
+                <div class="contact">
+                    <img src="police.avif" alt="Police Image" class="contact-img">
+                    <div class="contact-info">
+                        <p>Police</p>
+                        <p>Phone: 100</p>
+                    </div>
+                </div>
+                <div class="contact">
+                    <img src="d-doctor-male-character-simple-cartoon-fun-person-man-hospital-clinic-medical-specialist-pharmacist-lab-worker-ai-generated-309991068.webp" alt="Hospital Image" class="contact-img">
+                    <div class="contact-info">
+                        <p>Hospital</p>
+                        <p>Phone: 102</p>
+                    </div>
+                </div>
+                <!-- Add more contacts if needed -->
+            </div>
+        </section>
+
+        <section class="section faq animate__animated animate__fadeIn animate__delay-2s">
+            <h2>Frequently Asked Questions (FAQ)</h2>
+            <!-- FAQ Items -->
+            <div class="faq-item">
+                <div class="faq-question">How does the SOS feature work?</div>
+                <div class="faq-answer">The SOS feature sends an immediate alert to your selected contacts with your current location. It can be activated by clicking the SOS button on the home page.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">What should I do if I accidentally press the SOS button?</div>
+                <div class="faq-answer">If the SOS button is pressed accidentally, you can contact your emergency contacts to inform them of the mistake. They will receive a notification and can disregard it if it's a false alarm.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">Can I customize the list of emergency contacts?</div>
+                <div class="faq-answer">Yes, you can customize the list of emergency contacts by accessing the settings on the home page. You can add, remove, or update contact information as needed.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">How can I update my location settings?</div>
+                <div class="faq-answer">Location settings are automatically updated based on your current GPS coordinates. Ensure that location services are enabled on your device for accurate tracking.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">Is the SOS feature available offline?</div>
+                <div class="faq-answer">The SOS feature requires an internet connection to send alerts and share your location. Make sure you have an active connection.</div>
+            </div>
+            <!-- Hidden FAQ Items -->
+            <div class="hidden-faq">
+                <!-- Additional FAQs go here -->
+                <div class="faq-item">
+                    <div class="faq-question">How do I delete or change my emergency contacts?</div>
+                    <div class="faq-answer">You can delete or change emergency contacts through the settings page accessible from the home page. Follow the prompts to update your list.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">What information is sent to my emergency contacts?</div>
+                    <div class="faq-answer">Your emergency contacts will receive a message with your current location, along with any predefined message you set up for emergencies.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Can I use the SOS feature in different countries?</div>
+                    <div class="faq-answer">The SOS feature works globally, but make sure that your emergency contacts are reachable internationally. Some local numbers may not be valid abroad.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">What if my phone's battery is low?</div>
+                    <div class="faq-answer">If your phone’s battery is low, the SOS feature may not work effectively. It’s advisable to keep your phone charged, especially when traveling alone.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Are there any costs associated with using the SOS feature?</div>
+                    <div class="faq-answer">The SOS feature is free to use, but data charges may apply depending on your mobile plan and the network you are connected to.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">How secure is the SOS feature?</div>
+                    <div class="faq-answer">The SOS feature uses encryption to protect your location data and messages. Ensure that your device has updated security patches for additional safety.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Can I share my location with other apps?</div>
+                    <div class="faq-answer">Yes, you can share your location with other apps if needed. However, ensure that you have granted the necessary permissions to these apps.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">What if the SOS feature is not working?</div>
+                    <div class="faq-answer">If the SOS feature is not working, check your internet connection and device settings. Contact support if the issue persists.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Can I customize the SOS button appearance?</div>
+                    <div class="faq-answer">Currently, the appearance of the SOS button cannot be customized. However, you can provide feedback for future updates.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">What should I do if I lose my phone?</div>
+                    <div class="faq-answer">If you lose your phone, inform your emergency contacts and change your passwords for added security. Report the loss to your service provider.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Can the SOS feature be disabled?</div>
+                    <div class="faq-answer">The SOS feature is designed to be active at all times for safety. You cannot disable it, but you can configure the settings to fit your needs.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">How can I contact support?</div>
+                    <div class="faq-answer">You can contact support through the contact form on the website or by sending an email to support@example.com.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Is the SOS feature available on all devices?</div>
+                    <div class="faq-answer">The SOS feature is available on most modern smartphones. Ensure your device meets the minimum requirements specified in the app’s documentation.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">What languages does the SOS feature support?</div>
+                    <div class="faq-answer">The SOS feature supports multiple languages. Check the app settings to select your preferred language.</div>
+                </div>
+            </div>
+            <button id="see-more" onclick="toggleFAQ()">See More</button>
+        </section>
+
+        <section class="section safety-info animate__animated animate__fadeIn animate__delay-3s">
+            <h2>Women's Safety</h2>
+            <p>Women's safety is a critical issue, and having immediate access to help can make a significant difference in emergency situations. Our SOS feature is designed to offer a quick and reliable way to alert your emergency contacts and share your location, ensuring you receive the help you need promptly.</p>
+            <p>It's essential to be aware of your surroundings and take preventive measures to protect yourself. Always trust your instincts and avoid risky situations when possible. The SOS button provides an extra layer of security by allowing you to quickly send an alert if you feel threatened or are in danger.</p>
+            <p>In addition to using the SOS feature, consider sharing your travel plans with trusted friends or family members, especially when traveling alone or to unfamiliar places. Staying connected with loved ones and having a plan in case of emergencies can significantly enhance your safety.</p>
+            <p>We encourage you to familiarize yourself with the features of the SOS button and ensure that your emergency contacts are updated and reachable. Your safety is our top priority, and we're here to support you with the tools and resources you need to stay secure.</p>
+            <!-- Placeholder for safety images -->
+            <img src="sosimage.webp" alt="Safety Image 1" style="width: 100%; max-width: 600px; margin: 20px 0;">
+           <h2> Women's Safety: A Priority
+           </h2>
+           <p>Women's safety is a fundamental concern that affects us all. In an increasingly complex world, ensuring that women have access to immediate help and support in emergency situations is crucial. Our SOS feature is designed to offer a quick, reliable, and discreet way to alert your emergency contacts and share your location, providing an additional layer of security and peace of mind.</p>
+           <h2>Empowering Women with Technology</h2>
+           <p>Empowerment through technology can make a significant difference in personal safety. The SOS button on our website is a proactive tool that allows you to swiftly notify your chosen contacts when you feel threatened or are in a potentially dangerous situation. With just a click, you can send an alert with your current location, ensuring that help is on the way without delay.
+            Women's safety is a fundamental concern that affects us all. In an increasingly complex world, ensuring that women have access to immediate help and support in emergency situations is crucial. Our SOS feature is designed to offer a quick, reliable, and discreet way to alert your emergency contacts and share your location, providing an additional layer of security and peace of mind.</p>
+           </p>
+           <h2>Preventive Measures and Awareness</h2>
+           <p>Empowerment through technology can make a significant difference in personal safety. The SOS button on our website is a proactive tool that allows you to swiftly notify your chosen contacts when you feel threatened or are in a potentially dangerous situation. With just a click, you can send an alert with your current location, ensuring that help is on the way without delay.
+            Women's safety is a fundamental concern that affects us all. In an increasingly complex world, ensuring that women have access to immediate help and support in emergency situations is crucial. Our SOS feature is designed to offer a quick, reliable, and discreet way to alert your emergency contacts and share your location, providing an additional layer of security and peace of mind.Empowerment through technology can make a significant difference in personal safety. The SOS button on our website is a proactive tool that allows you to swiftly notify your chosen contacts when you feel threatened or are in a potentially dangerous situation. With just a click, you can send an alert with your current location, ensuring that help is on the way without delay.
+            Women's safety is a fundamental concern that affects us all. In an increasingly complex world, ensuring that women have access to immediate help and support in emergency situations is crucial. Our SOS feature is designed to offer a quick, reliable, and discreet way to alert your emergency contacts and share your location, providing an additional layer of security and peace of mind.</p>
+           <h2>Stay Connected and Informed</h2>
+           <p>Staying connected with loved ones and having a well-thought-out safety plan can greatly enhance your personal security. Share your travel plans and check-in regularly, especially when traveling alone or to unfamiliar places. Knowing that help is just a button away can give you the confidence to navigate daily life with greater assurance.</p>
+           <h2>Support and Resources</h2>
+           <p>Our commitment extends beyond providing safety tools. We aim to raise awareness and provide resources that support women's safety in various scenarios. Education on personal safety, self-defense strategies, and access to emergency services are vital components of a comprehensive safety approach.Empowerment through technology can make a significant difference in personal safety. The SOS button on our website is a proactive tool that allows you to swiftly notify your chosen contacts when you feel threatened or are in a potentially dangerous situation. With just a click, you can send an alert with your current location, ensuring that help is on the way without delay.
+            Women's safety is a fundamental concern that affects us all. In an increasingly complex world, ensuring that women have access to immediate help and support in emergency situations is crucial. Our SOS feature is designed to offer a quick, reliable, and discreet way to alert your emergency contacts and share your location, providing an additional layer of security and peace of mind.Empowerment through technology can make a significant difference in personal safety. The SOS button on our website is a proactive tool that allows you to swiftly notify your chosen contacts when you feel threatened or are in a potentially dangerous situation. With just a click, you can send an alert with your current location, ensuring that help is on the way without delay.
+            Women's safety is a fundamental concern that affects us all. In an increasingly complex world, ensuring that women have access to immediate help and support in emergency situations is crucial. Our SOS feature is designed to offer a quick, reliable, and discreet way to alert your emergency contacts and share your location, providing an additional layer of security and peace of mind.</p>
+        </section>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const faqItems = document.querySelectorAll('.faq-item');
+            const seeMoreButton = document.getElementById('see-more');
+
+            // Initially show only the first 5 FAQs
+            faqItems.forEach((item, index) => {
+                if (index >= 5) {
+                    item.style.display = 'none';
+                }
+            });
+
+            // Toggle FAQ answers
+            faqItems.forEach(item => {
+                item.querySelector('.faq-question').addEventListener('click', () => {
+                    item.classList.toggle('show-answer');
+                });
+            });
+
+            // Toggle visibility of additional FAQs
+            seeMoreButton.addEventListener('click', () => {
+                const hiddenFaqItems = document.querySelector('.hidden-faq').children;
+                const isHidden = Array.from(hiddenFaqItems).some(item => item.style.display === 'none');
+                if (isHidden) {
+                    Array.from(hiddenFaqItems).forEach(item => item.style.display = 'block');
+                    seeMoreButton.textContent = 'See Less';
+                } else {
+                    Array.from(hiddenFaqItems).forEach(item => item.style.display = 'none');
+                    seeMoreButton.textContent = 'See More';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
